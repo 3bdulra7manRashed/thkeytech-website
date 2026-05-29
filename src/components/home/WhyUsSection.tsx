@@ -14,7 +14,8 @@ export function WhyUsSection() {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           badge="لماذا ذكي تك؟"
-          title="نبني حلولاً ذكية بعقلية مختلفة"
+          title="نفكر في مشروعك كما لو كان مشروعنا"
+          subtitle="لا نكتفي بالتنفيذ، بل نشاركك التفكير والتخطيط لبناء حلول رقمية تحقق نتائج قابلة للقياس."
         />
 
         <div className="grid gap-6 md:grid-cols-2">

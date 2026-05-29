@@ -1,10 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { HelpCircle } from "lucide-react";
-import { challenges } from "@/lib/constants";
+import { Lightbulb, TrendingUp, Zap, ShieldCheck } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+
+const challengeCards = [
+  {
+    title: "فكرة مشروع غير واضحة",
+    description: "لست متأكدًا من أفضل طريقة لتحويل فكرتك إلى منتج رقمي ناجح.",
+    icon: Lightbulb,
+  },
+  {
+    title: "موقع لا يحقق النتائج المطلوبة",
+    description: "موقعك الحالي لا يجذب العملاء أو يعكس قيمة علامتك التجارية.",
+    icon: TrendingUp,
+  },
+  {
+    title: "عمليات تستهلك الوقت والجهد",
+    description: "مهام متكررة يمكن أتمتتها بحلول ذكية توفر الوقت وتزيد الكفاءة.",
+    icon: Zap,
+  },
+  {
+    title: "تبحث عن شريك تقني موثوق",
+    description: "تحتاج إلى فريق يمكن الاعتماد عليه لتنفيذ فكرتك باحترافية.",
+    icon: ShieldCheck,
+  },
+];
 
 export function ChallengesSection() {
   return (
@@ -16,22 +38,34 @@ export function ChallengesSection() {
           subtitle="نحوّل هذه التحديات إلى فرص للنمو من خلال حلول رقمية ذكية ومصممة خصيصًا لاحتياجات أعمالك."
         />
 
-        <div className="grid gap-5 sm:grid-cols-2">
-          {challenges.map((challenge, i) => (
-            <Reveal key={challenge} delay={i * 0.08}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                className="glass-card-hover group flex gap-4 p-6"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-primary/30 to-brand-purple/30 text-brand-light transition-shadow group-hover:shadow-glow">
-                  <HelpCircle size={22} />
-                </div>
-                <p className="text-base font-medium leading-relaxed text-foreground/90">
-                  {challenge}
-                </p>
-              </motion.div>
-            </Reveal>
-          ))}
+        <div className="grid gap-6 sm:grid-cols-2">
+          {challengeCards.map((card, i) => {
+            const IconComponent = card.icon;
+            return (
+              <Reveal key={i} delay={i * 0.08}>
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="group relative flex flex-col items-start text-right p-6 sm:p-7 rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white shadow-[0_2px_8px_rgba(17,24,39,0.03)] hover:shadow-[0_18px_40px_rgba(17,24,39,0.06)] hover:border-[rgba(68,96,239,0.14)] transition-all duration-300 ease-out w-full"
+                >
+                  {/* Icon Container */}
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(68,96,239,0.05)] border border-[rgba(68,96,239,0.08)] text-[#4460ef] transition-transform duration-300 ease-out group-hover:scale-105">
+                    <IconComponent size={24} strokeWidth={1.8} />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-5 text-lg font-bold text-[#111827] transition-colors duration-300 ease-out group-hover:text-[#4460ef]">
+                    {card.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-3 text-sm leading-[1.8] text-[rgba(17,24,39,0.72)] max-w-xs">
+                    {card.description}
+                  </p>
+                </motion.div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
