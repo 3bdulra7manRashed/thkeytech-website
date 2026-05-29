@@ -37,19 +37,16 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="relative z-50 flex items-center gap-2">
           <Image
-            src="/brand/mark.svg"
+            src="/brand/logo.svg"
             alt="ذكي تك"
-            width={36}
-            height={36}
-            className="h-9 w-9"
+            width={120}
+            height={38}
+            className="h-9 w-auto"
             priority
           />
-          <span className="hidden text-sm font-bold text-foreground sm:block">
-            ذكي <span className="text-brand-primary">تك</span>
-          </span>
         </Link>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

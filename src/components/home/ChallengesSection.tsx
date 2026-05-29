@@ -11,9 +11,9 @@ export function ChallengesSection() {
     <section className="section-padding relative">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
-          badge="تحديات"
-          title="هل تواجه أحد هذه التحديات؟"
-          subtitle="نحن هنا لنقدّم لك حلولاً ذكية تساعدك على تجاوز هذه التحديات."
+          badge="تحديات النمو الرقمي"
+          title="هل تعيق هذه التحديات نمو أعمالك؟"
+          subtitle="نحوّل هذه التحديات إلى فرص للنمو من خلال حلول رقمية ذكية ومصممة خصيصًا لاحتياجات أعمالك."
         />
 
         <div className="grid gap-5 sm:grid-cols-2">

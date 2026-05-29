@@ -1,8 +1,9 @@
 "use client";
 
-import { Globe, Smartphone, Brain } from "lucide-react";
+import { Globe, Smartphone, BrainCircuit } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 
 const choices = [
   {
@@ -18,7 +19,7 @@ const choices = [
     description: "الأفضل عندما تحتاج تواصلاً مباشراً وتجربة يومية.",
   },
   {
-    icon: Brain,
+    icon: BrainCircuit,
     title: "حلول ذكية",
     outcome: "كفاءة وتوفير للوقت",
     description: "مثالي لأتمتة العمليات وتحسين الإنتاجية.",
@@ -38,16 +39,24 @@ export function SmartChoiceSection() {
         <div className="grid gap-6 md:grid-cols-3">
           {choices.map((choice, i) => (
             <Reveal key={choice.title} delay={i * 0.1}>
-              <div className="glass-card-hover h-full p-8 text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-primary/20">
-                  <choice.icon className="text-brand-light" size={32} />
+              <motion.div
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="service-card group h-full text-center"
+              >
+                <div className="service-card-icon mx-auto">
+                  <choice.icon size={24} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">{choice.title}</h3>
-                <p className="mt-2 text-sm font-semibold text-brand-pink">→ {choice.outcome}</p>
+                <h3 className="text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-brand-primary">
+                  {choice.title}
+                </h3>
+                <p className="mt-2 text-sm font-medium text-brand-primary/70">
+                  → {choice.outcome}
+                </p>
                 <p className="mt-3 text-sm leading-relaxed text-theme-muted">
                   {choice.description}
                 </p>
-              </div>
+              </motion.div>
             </Reveal>
           ))}
         </div>
