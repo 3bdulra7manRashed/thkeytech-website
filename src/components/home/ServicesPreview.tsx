@@ -52,9 +52,9 @@ export function ServicesPreview() {
               <Reveal key={service.title} delay={i * 0.08}>
                 <Link href={service.href} className="block h-full">
                   <motion.article
-                    whileHover={{ y: -6 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="group relative flex h-full flex-col items-start text-right rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white p-5 sm:p-6 shadow-[0_2px_8px_rgba(17,24,39,0.03)] transition-all duration-300 ease-out hover:border-[rgba(68,96,239,0.14)] hover:shadow-[0_18px_40px_rgba(17,24,39,0.05)]"
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                    className="group relative flex h-full flex-col items-start text-right rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white p-5 sm:p-6 shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow,border-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
                   >
                     {/* Icon Container */}
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(68,96,239,0.05)] border border-[rgba(68,96,239,0.08)] text-[#4460ef] transition-transform duration-300 ease-out group-hover:scale-105">
