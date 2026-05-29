@@ -31,7 +31,7 @@ export function HeroSection() {
             <motion.h1
               {...fadeUp}
               transition={{ duration: 0.65, delay: 0.08 }}
-              className="text-balance text-4xl font-extrabold leading-[1.15] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.12] xl:text-6xl"
+              className="text-balance text-4xl font-extrabold leading-[1.2] py-1 text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.2] xl:text-6xl"
             >
               حلول رقمية{" "}
               <span className="relative inline-block">
@@ -42,7 +42,7 @@ export function HeroSection() {
                 />
               </span>
               <br />
-              <span className="mt-1 block font-bold text-foreground/95">
+              <span className="font-bold text-foreground/95">
                 تصنع حضورًا أقوى لأعمالك
               </span>
             </motion.h1>
@@ -52,7 +52,7 @@ export function HeroSection() {
               transition={{ duration: 0.65, delay: 0.16 }}
               className="mt-6 max-w-[460px] text-pretty text-base leading-[1.8] text-foreground/80 sm:text-lg lg:max-w-[420px]"
             >
-             نطوّر مواقع وتطبيقات وحلول ذكاء اصطناعي تساعد أعمالك على النمو، وتحول أفكارك إلى نتائج ملموسة.
+              نطوّر مواقع وتطبيقات وحلول ذكاء اصطناعي تساعد أعمالك على النمو، وتحول أفكارك إلى نتائج ملموسة.
             </motion.p>
 
             <motion.div
@@ -112,7 +112,7 @@ function HeroAtmosphere() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       {/* Soft ambient depth behind headline text area */}
-      <div 
+      <div
         className="absolute right-[5%] top-[15%] h-[480px] w-[480px] rounded-full blur-[130px] opacity-40 mix-blend-multiply"
         style={{
           background: "radial-gradient(circle, rgba(68,96,239,0.05) 0%, rgba(252,49,150,0.03) 70%, transparent 100%)"

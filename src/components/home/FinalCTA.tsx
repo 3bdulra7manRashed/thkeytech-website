@@ -3,32 +3,50 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { GradientOrb } from "@/components/shared/GradientOrb";
 
 export function FinalCTA() {
   return (
-    <section className="section-padding relative">
-      <motion.div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-brand-primary/20 bg-glass p-10 text-center shadow-card sm:p-16">
-        <GradientOrb className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" color="primary" size="lg" />
-        <GradientOrb className="right-0 top-0" color="pink" size="md" />
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-brand-primary/20 via-brand-purple/10 to-brand-pink/20"
-          animate={{ opacity: [0.5, 0.8, 0.5] }}
-          transition={{ duration: 5, repeat: Infinity }}
+    <section className="pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-16 lg:pb-28 px-4 sm:px-6 lg:px-8 relative">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.5 }}
+        className="group relative mx-auto max-w-[920px] overflow-hidden rounded-3xl border border-[rgba(68,96,239,0.08)] bg-white dark:bg-background-elevated py-10 px-6 sm:py-12 sm:px-12 text-center shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow] duration-300 ease-out hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
+      >
+        {/* Extremely Subtle Brand Depth Radial Glow */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-100 dark:opacity-40"
+          style={{
+            background:
+              "radial-gradient(circle at 50% 50%, rgba(68,96,239,0.04) 0%, rgba(252,49,150,0.03) 70%, transparent 100%)",
+          }}
+          aria-hidden
         />
-        <div className="relative">
+
+        <div className="relative z-10">
+          <span className="mb-5 inline-block rounded-full border border-brand-primary/25 bg-brand-primary/10 px-4 py-1.5 text-xs font-semibold text-brand-primary dark:text-brand-light">
+            استشارة مجانية
+          </span>
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
             جاهز لبناء حضور رقمي أكثر ذكاءً؟
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-theme-muted">
-            لنتحدث عن مشروعك ونصمم لك الحل الأمثل — استشارة أولية مجانية.
+            احصل على استشارة مجانية وخطة واضحة لمشروعك.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button href="/contact">
+            <Button href="/contact" className="group/btn">
               تواصل معنا
-              <ArrowLeft size={18} />
+              <ArrowLeft
+                size={18}
+                className="transition-transform duration-300 group-hover/btn:-translate-x-0.5"
+              />
             </Button>
-            <Button href="/contact" variant="secondary">
+            <Button
+              href="/contact"
+              variant="secondary"
+              className="font-semibold border border-[rgba(68,96,239,0.12)] bg-white dark:bg-background-elevated hover:border-[rgba(68,96,239,0.24)] hover:shadow-[0_6px_16px_rgba(17,24,39,0.06)] transition-all duration-300"
+            >
               ابدأ مشروعك الآن
             </Button>
           </div>

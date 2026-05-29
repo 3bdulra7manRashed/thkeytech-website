@@ -332,3 +332,11 @@
     mix-blend-mode: var(--mark-blend);
   }
 }
+
+/* ─── Premium Arabic Typography Optimization ─── */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
