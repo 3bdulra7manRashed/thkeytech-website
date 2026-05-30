@@ -117,6 +117,40 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(68, 96, 239, 0.22) rgba(17, 24, 39, 0.03);
+  }
+
+  /* Premium SaaS Scrollbar for Webkit (Desktop Only) */
+  @media (min-width: 1024px) {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(17, 24, 39, 0.03);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: rgba(68, 96, 239, 0.22);
+      border-radius: 999px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      transition: background-color 0.25s ease, opacity 0.25s ease;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(68, 96, 239, 0.35);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+    
+    ::-webkit-scrollbar-thumb:active {
+      background: rgba(68, 96, 239, 0.45);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
   }
 
   body {

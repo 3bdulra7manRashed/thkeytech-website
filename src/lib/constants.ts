@@ -3,7 +3,7 @@ export const siteConfig = {
   nameEn: "TheKey Tech",
   tagline: "حلول رقمية ذكية تساعدك على النمو بثقة",
   description:
-    "في ذكي تك، نطوّر مواقع إلكترونية وتطبيقات وحلولاً ذكية تساعد الشركات ورواد الأعمال على بناء حضور رقمي احترافي وتحقيق نتائج حقيقية.",
+    "نبني مواقع إلكترونية وتطبيقات وحلولًا رقمية تساعد الشركات على النمو وتحقيق نتائج قابلة للقياس.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://thekeytech.com",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@thekeytech.com",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "966500000000",
