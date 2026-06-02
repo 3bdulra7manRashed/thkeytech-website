@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bot, Workflow, BarChart3, Cpu, ArrowLeft } from "lucide-react";
+import { Bot, Workflow, BarChart3, Cpu, ArrowLeft, Database, Target } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -44,28 +44,30 @@ export function AISection() {
           ))}
         </div>
 
-        {/* UPGRADED FEATURE CARDS: Larger icons, better padding/gaps, hover lift & shadows */}
+        {/* PREMIUM FEATURE CARDS: Refined height, borders, shadows, and icon container system */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {aiFeatures.map((feature, i) => (
             <Reveal key={feature.title} delay={i * 0.08}>
               <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative overflow-hidden text-center !p-9 border border-border/60 bg-white/70 dark:bg-elevated/40 backdrop-blur-md hover:border-brand-primary/25 transition-all duration-300 rounded-[22px] shadow-[0_8px_30px_rgba(0,0,0,0.015)] hover:shadow-[0_20px_40px_rgba(68,96,239,0.06)]"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="group relative overflow-hidden text-center py-7 px-8 border border-[rgba(68,96,239,0.10)] bg-white/70 dark:bg-elevated/40 backdrop-blur-md hover:border-[rgba(68,96,239,0.18)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-2xl shadow-[0_4px_14px_rgba(17,24,39,0.035)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
               >
-                {/* Corner glow effect on hover */}
-                <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-brand-primary/[0.03] blur-2xl group-hover:bg-brand-primary/[0.08] transition-colors duration-300 pointer-events-none" />
+                {/* Corner glow effect on hover - subtle, matching requirements */}
+                <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-brand-primary/[0.02] blur-2xl group-hover:bg-brand-primary/[0.05] transition-colors duration-300 pointer-events-none" />
 
-                {/* Icon Area: larger, border, gradient bg, transitions */}
-                <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-primary/10 bg-gradient-to-br from-brand-primary/[0.04] to-brand-purple/[0.04] text-brand-primary group-hover:border-brand-primary/20 group-hover:from-brand-primary/[0.08] group-hover:to-brand-purple/[0.08] transition-all duration-300">
-                  <feature.icon size={30} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-105" />
+                {/* Icon Container: Larger size (+15%), premium gradient background, border, radius, inner depth, hover scale */}
+                <div className="mx-auto mb-5 flex h-[74px] w-[74px] items-center justify-center rounded-[14px] border border-[rgba(79,112,255,0.12)] bg-gradient-to-b from-[rgba(79,112,255,0.10)] to-[rgba(79,112,255,0.04)] text-brand-primary shadow-[inset_0_1px_2px_rgba(79,112,255,0.15)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]">
+                  {/* Icon: Size (+10%), stronger stroke weight, brand-colored */}
+                  <feature.icon size={33} strokeWidth={2} className="transition-transform duration-300" />
                 </div>
 
-                {/* Typography: text-lg, mb-3, line-height 1.7, soft readable color */}
-                <h3 className="mb-3 text-lg font-bold text-foreground transition-colors duration-300 group-hover:text-brand-primary">
+                {/* Typography: font-bold (700), tighter spacing below title, tighter grouping with icon */}
+                <h3 className="mb-2 text-lg font-bold text-foreground transition-colors duration-300 group-hover:text-brand-primary">
                   {feature.title}
                 </h3>
-                <p className="text-[13.5px] leading-[1.7] text-foreground/70 dark:text-theme-muted">
+                {/* Description: Slightly darker text color, better readability, line-height 1.75-1.85 */}
+                <p className="text-[13.5px] leading-[1.78] text-foreground/75 dark:text-theme-muted/90">
                   {feature.desc}
                 </p>
               </motion.div>
@@ -89,107 +91,214 @@ export function AISection() {
 
 function AIVisual() {
   const nodes = [
-    { x: "50%", y: "15%", label: "بيانات" },
-    { x: "80%", y: "50%", label: "تحليل" },
-    { x: "20%", y: "50%", label: "أتمتة" },
-    { x: "50%", y: "85%", label: "قرار" },
+    { x: "50%", y: "15%", label: "بيانات", icon: Database },
+    { x: "80%", y: "50%", label: "تحليل", icon: BarChart3 },
+    { x: "20%", y: "50%", label: "أتمتة", icon: Workflow },
+    { x: "50%", y: "85%", label: "قرار", icon: Target },
   ];
 
   return (
     <Reveal className="mt-16">
-      <div className="relative mx-auto h-72 max-w-2xl sm:h-80 bg-gradient-to-b from-transparent via-brand-primary/[0.01] to-transparent rounded-3xl border border-brand-primary/5 p-4 overflow-hidden">
+      <div className="relative mx-auto h-72 max-w-2xl sm:h-80 bg-gradient-to-b from-transparent via-brand-primary/[0.005] to-transparent rounded-3xl border border-brand-primary/5 p-4 overflow-hidden">
         {/* Ambient Grid Effect */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(68,96,239,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(68,96,239,0.02)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(68,96,239,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(68,96,239,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
         <svg className="absolute inset-0 h-full w-full" aria-hidden>
-          <defs>
-            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#4460EF" />
-              <stop offset="100%" stopColor="#FC3196" />
-            </linearGradient>
-          </defs>
+          {/* Thin solid connection lines */}
+          <line x1="50%" y1="15%" x2="50%" y2="50%" stroke="rgba(79, 112, 255, 0.15)" strokeWidth="1.5" />
+          <line x1="80%" y1="50%" x2="50%" y2="50%" stroke="rgba(79, 112, 255, 0.15)" strokeWidth="1.5" />
+          <line x1="20%" y1="50%" x2="50%" y2="50%" stroke="rgba(79, 112, 255, 0.15)" strokeWidth="1.5" />
+          <line x1="50%" y1="85%" x2="50%" y2="50%" stroke="rgba(79, 112, 255, 0.15)" strokeWidth="1.5" />
 
-          {/* Dotted active data flow lines linking to the AI Core */}
-          {/* Node 1: البيانات -> AI Core */}
-          <motion.line
-            x1="50%" y1="15%"
-            x2="50%" y2="50%"
-            stroke="url(#lineGrad)"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="4 4"
-            animate={{ strokeDashoffset: [0, -20] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          />
+          {/* Animated pulse points flowing along the lines */}
+          {/* Flow 1: Top (بيانات) -> Center */}
+          <g>
+            <motion.circle
+              r="4.5"
+              fill="#4460ef"
+              opacity="0.2"
+              animate={{
+                cx: ["50%", "50%"],
+                cy: ["15%", "50%"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+            <motion.circle
+              r="2"
+              fill="#4460ef"
+              animate={{
+                cx: ["50%", "50%"],
+                cy: ["15%", "50%"],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+          </g>
 
-          {/* Node 2: تحليل -> AI Core */}
-          <motion.line
-            x1="80%" y1="50%"
-            x2="50%" y2="50%"
-            stroke="url(#lineGrad)"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="4 4"
-            animate={{ strokeDashoffset: [0, -20] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          />
+          {/* Flow 2: Right (تحليل) -> Center */}
+          <g>
+            <motion.circle
+              r="4.5"
+              fill="#4460ef"
+              opacity="0.2"
+              animate={{
+                cx: ["80%", "50%"],
+                cy: ["50%", "50%"],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 0.8,
+              }}
+            />
+            <motion.circle
+              r="2"
+              fill="#4460ef"
+              animate={{
+                cx: ["80%", "50%"],
+                cy: ["50%", "50%"],
+              }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 0.8,
+              }}
+            />
+          </g>
 
-          {/* Node 3: AI Core -> أتمتة */}
-          <motion.line
-            x1="50%" y1="50%"
-            x2="20%" y2="50%"
-            stroke="url(#lineGrad)"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="4 4"
-            animate={{ strokeDashoffset: [0, -20] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          />
+          {/* Flow 3: Center -> Left (أتمتة) */}
+          <g>
+            <motion.circle
+              r="4.5"
+              fill="#4460ef"
+              opacity="0.2"
+              animate={{
+                cx: ["50%", "20%"],
+                cy: ["50%", "50%"],
+              }}
+              transition={{
+                duration: 3.2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 1.5,
+              }}
+            />
+            <motion.circle
+              r="2"
+              fill="#4460ef"
+              animate={{
+                cx: ["50%", "20%"],
+                cy: ["50%", "50%"],
+              }}
+              transition={{
+                duration: 3.2,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 1.5,
+              }}
+            />
+          </g>
 
-          {/* Node 4: AI Core -> قرار */}
-          <motion.line
-            x1="50%" y1="50%"
-            x2="50%" y2="85%"
-            stroke="url(#lineGrad)"
-            strokeWidth="1.5"
-            strokeOpacity="0.4"
-            strokeDasharray="4 4"
-            animate={{ strokeDashoffset: [0, -20] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          />
+          {/* Flow 4: Center -> Bottom (قرار) */}
+          <g>
+            <motion.circle
+              r="4.5"
+              fill="#4460ef"
+              opacity="0.2"
+              animate={{
+                cx: ["50%", "50%"],
+                cy: ["50%", "85%"],
+              }}
+              transition={{
+                duration: 2.8,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 0.4,
+              }}
+            />
+            <motion.circle
+              r="2"
+              fill="#4460ef"
+              animate={{
+                cx: ["50%", "50%"],
+                cy: ["50%", "85%"],
+              }}
+              transition={{
+                duration: 2.8,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 0.4,
+              }}
+            />
+          </g>
         </svg>
 
-        {/* Central AI Core circular element with glow */}
-        <motion.div
-          className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-brand-primary/20 bg-white text-center shadow-[0_8px_32px_rgba(68,96,239,0.18)] z-10"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          {/* Subtle blue glow behind the AI Core */}
-          <div className="absolute -inset-4 bg-brand-primary/10 blur-xl rounded-full pointer-events-none -z-10" />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-brand-primary/50">Engine</span>
-          <span className="text-xl font-extrabold tracking-wide text-brand-primary">AI</span>
-        </motion.div>
-
-        {/* Surrounding Nodes with subtle pulse animation */}
-        {nodes.map((node, i) => (
+        {/* Central AI Core circular element with double-ring glow */}
+        <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-10">
+          {/* Pulsing and Rotating Outer Dashed Ring */}
           <motion.div
-            key={node.label}
-            className="absolute flex h-12 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border border-brand-primary/10 bg-white text-[13px] font-semibold text-brand-primary shadow-[0_4px_12px_rgba(68,96,239,0.04)]"
-            style={{ left: node.x, top: node.y }}
-            animate={{
-              scale: [1, 1.03, 1],
-              boxShadow: [
-                "0 4px 12px rgba(68,96,239,0.04)",
-                "0 8px 24px rgba(68,96,239,0.08)",
-                "0 4px 12px rgba(68,96,239,0.04)",
-              ],
-            }}
-            transition={{ duration: 4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
+            className="absolute inset-0 rounded-full border border-dashed border-brand-primary/25"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          />
+
+          {/* Breathing Middle Glow Ring */}
+          <motion.div
+            className="absolute h-24 w-24 rounded-full border border-[rgba(79,112,255,0.08)] bg-brand-primary/[0.02]"
+            animate={{ scale: [0.95, 1.05, 0.95] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Inner solid premium core */}
+          <motion.div
+            className="flex h-20 w-20 flex-col items-center justify-center rounded-full border border-brand-primary/20 bg-white dark:bg-slate-900 text-center shadow-[0_8px_32px_rgba(68,96,239,0.12)]"
+            animate={{ scale: [1, 1.02, 1] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            {node.label}
+            <span className="text-[9px] font-bold uppercase tracking-wider text-brand-primary/40">Engine</span>
+            <span className="text-lg font-extrabold tracking-wide text-brand-primary">AI</span>
           </motion.div>
-        ))}
+        </div>
+
+        {/* Surrounding Nodes with micro-icons and clean labels */}
+        {nodes.map((node, i) => {
+          const Icon = node.icon;
+          return (
+            <div
+              key={node.label}
+              className="absolute flex flex-col items-center -translate-x-1/2 -translate-y-1/2"
+              style={{ left: node.x, top: node.y }}
+            >
+              {/* Icon Container */}
+              <motion.div
+                className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-white dark:bg-slate-900 border border-[rgba(79,112,255,0.15)] shadow-[0_4px_12px_rgba(15,23,42,0.03)] text-brand-primary z-10"
+                animate={{
+                  boxShadow: [
+                    "0 4px 12px rgba(79,112,255,0.03)",
+                    "0 6px 18px rgba(79,112,255,0.08)",
+                    "0 4px 12px rgba(79,112,255,0.03)",
+                  ],
+                }}
+                transition={{ duration: 4, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
+              >
+                <Icon size={18} strokeWidth={1.8} />
+              </motion.div>
+              {/* Label */}
+              <span className="mt-2 text-xs font-bold text-foreground/80 dark:text-theme-muted tracking-wide whitespace-nowrap">
+                {node.label}
+              </span>
+            </div>
+          );
+        })}
       </div>
     </Reveal>
   );
