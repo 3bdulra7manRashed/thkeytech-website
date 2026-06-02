@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { RiWhatsappLine } from "react-icons/ri";
 import { navLinks, siteConfig } from "@/lib/constants";
 
@@ -15,57 +15,68 @@ export function Footer() {
         aria-hidden
       />
       <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
-        <div className="grid gap-10 lg:grid-cols-4">
-          {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="mb-3 inline-flex items-center gap-3">
+        <div className="grid gap-10 lg:grid-cols-[2fr_1fr_1fr]">
+          {/* Brand Column — Visual Anchor */}
+          <div>
+            <Link href="/" className="inline-flex items-center">
               <Image
                 src="/brand/logo.svg"
                 alt={siteConfig.nameEn}
-                width={160}
-                height={48}
-                className="h-11 w-auto"
+                width={184}
+                height={54}
+                className="h-[52px] w-auto"
               />
             </Link>
-            <p className="mt-3 max-w-sm text-sm leading-[1.75] text-foreground/60">
-              {siteConfig.description}
+
+            {/* Brand accent line */}
+            <div className="mt-4 h-[2px] w-14 rounded-full bg-[#4460ef]" />
+
+            <p className="mt-4 max-w-[360px] text-[13px] leading-[1.85] text-foreground/55">
+              نبني مواقع إلكترونية وتطبيقات وحلولًا رقمية تساعد الشركات على النمو وتحقيق نتائج قابلة للقياس.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <p className="mt-2.5 text-[11px] font-medium tracking-wider text-foreground/35">
+              المواقع • التطبيقات • الأتمتة الذكية
+            </p>
+
+            {/* CTA Buttons — refined proportions */}
+            <div className="mt-5 flex flex-wrap gap-2.5">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex h-12 items-center justify-center gap-[8px] rounded-[14px] border border-[rgba(68,96,239,0.08)] bg-white px-[20px] text-[13px] font-semibold text-[#111827] shadow-[0_1px_3px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_8px_20px_rgba(17,24,39,0.08)]"
+                className="group inline-flex h-[42px] items-center justify-center gap-[7px] rounded-xl border border-[rgba(68,96,239,0.06)] bg-white px-4 text-[12.5px] font-semibold text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.03)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[rgba(68,96,239,0.14)] hover:shadow-[0_6px_16px_rgba(17,24,39,0.05)]"
               >
                 <RiWhatsappLine
-                  size={18}
-                  className="text-[#4460ef] transition-transform duration-300 group-hover:translate-x-[2px]"
+                  size={17}
+                  className="text-[#4460ef] transition-transform duration-300 group-hover:translate-x-[1px]"
                 />
                 واتساب مباشر
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="group inline-flex h-12 items-center justify-center gap-[8px] rounded-[14px] border border-[rgba(68,96,239,0.08)] bg-white px-[20px] text-[13px] font-semibold text-[#111827] shadow-[0_1px_3px_rgba(17,24,39,0.04)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_8px_20px_rgba(17,24,39,0.08)]"
+                className="group inline-flex h-[42px] items-center justify-center gap-[7px] rounded-xl border border-[rgba(68,96,239,0.06)] bg-white px-4 text-[12.5px] font-semibold text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.03)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[rgba(68,96,239,0.14)] hover:shadow-[0_6px_16px_rgba(17,24,39,0.05)]"
               >
                 <Mail
-                  size={18}
+                  size={16}
                   strokeWidth={2}
-                  className="text-[#4460ef] transition-transform duration-300 group-hover:translate-x-[2px]"
+                  className="text-[#4460ef] transition-transform duration-300 group-hover:translate-x-[1px]"
                 />
                 البريد الإلكتروني
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links — reduced visual weight */}
           <div>
-            <h3 className="mb-4 text-sm font-bold text-foreground">روابط سريعة</h3>
-            <ul className="space-y-2.5">
+            <h3 className="mb-3.5 text-[13px] font-bold text-foreground/80">
+              روابط سريعة
+            </h3>
+            <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-foreground/55 transition-all duration-300 hover:text-[#4460ef] hover:translate-x-[-2px] inline-block"
+                    className="inline-block text-[13px] text-foreground/50 transition-all duration-[250ms] ease-out hover:text-[#4460ef] hover:-translate-x-[3px]"
                   >
                     {link.label}
                   </Link>
@@ -74,16 +85,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Column */}
+          {/* Contact Column — premium contact cards */}
           <div>
-            <h3 className="mb-4 text-sm font-bold text-foreground">تواصل</h3>
-            <ul className="space-y-2.5 text-sm text-foreground/55">
+            <h3 className="mb-3.5 text-[13px] font-bold text-foreground/80">
+              تواصل
+            </h3>
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="transition-all duration-300 hover:text-[#4460ef] hover:translate-x-[-2px] inline-block"
+                  className="group inline-flex items-center gap-2.5 rounded-[10px] border border-[rgba(17,24,39,0.05)] bg-white/60 px-3 py-2 text-[12.5px] text-foreground/55 transition-all duration-[250ms] hover:-translate-y-[1px] hover:border-[rgba(68,96,239,0.12)] hover:text-[#4460ef]"
                 >
-                  {siteConfig.email}
+                  <Mail
+                    size={14}
+                    strokeWidth={2}
+                    className="shrink-0 text-foreground/40 transition-colors duration-[250ms] group-hover:text-[#4460ef]"
+                  />
+                  <span>{siteConfig.email}</span>
                 </a>
               </li>
               <li>
@@ -91,9 +109,14 @@ export function Footer() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all duration-300 hover:text-[#4460ef] hover:translate-x-[-2px] inline-block"
+                  className="group inline-flex items-center gap-2.5 rounded-[10px] border border-[rgba(17,24,39,0.05)] bg-white/60 px-3 py-2 text-[12.5px] text-foreground/55 transition-all duration-[250ms] hover:-translate-y-[1px] hover:border-[rgba(68,96,239,0.12)] hover:text-[#4460ef]"
                 >
-                  واتساب مباشر
+                  <MessageCircle
+                    size={14}
+                    strokeWidth={2}
+                    className="shrink-0 text-foreground/40 transition-colors duration-[250ms] group-hover:text-[#4460ef]"
+                  />
+                  <span>واتساب مباشر</span>
                 </a>
               </li>
             </ul>
@@ -101,13 +124,13 @@ export function Footer() {
         </div>
 
         {/* Footer Divider & Copyright */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[rgba(17,24,39,0.08)] pt-6 sm:flex-row">
-          <p className="text-xs text-foreground/40">
-            © {new Date().getFullYear()} {siteConfig.nameEn} - {siteConfig.name}. جميع الحقوق
-            محفوظة.
-          </p>
-          <p className="text-xs text-foreground/40">
+        <div className="mt-10 border-t border-[rgba(17,24,39,0.08)] pt-6 text-center">
+          <p className="text-[13px] font-medium text-foreground/50">
             حلول رقمية ذكية تساعد الشركات على النمو بكفاءة
+          </p>
+          <p className="mt-2.5 text-[11px] text-foreground/30 tracking-wide">
+            © {new Date().getFullYear()} {siteConfig.nameEn} — جميع الحقوق
+            محفوظة
           </p>
         </div>
       </div>
