@@ -22,6 +22,9 @@ export default function ServicesPage() {
         badge="خدماتنا"
         title="حلول رقمية ذكية لكل احتياج"
         subtitle="من المواقع إلى التطبيقات وحتى الذكاء الاصطناعي — نبني ما ينمو مع أعمالك."
+        indicators={["تطوير المواقع", "تطوير التطبيقات", "حلول الذكاء الاصطناعي"]}
+        cta={{ text: "استعرض خدماتنا", href: "#web" }}
+        fullHeight={true}
       />
       <WebDevSection />
       <MobileAppsSection />

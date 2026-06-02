@@ -7,6 +7,7 @@ type GradientOrbProps = {
   className?: string;
   color?: "primary" | "pink" | "light";
   size?: "sm" | "md" | "lg";
+  subtle?: boolean;
 };
 
 const colors = {
@@ -25,12 +26,20 @@ export function GradientOrb({
   className,
   color = "primary",
   size = "md",
+  subtle = false,
 }: GradientOrbProps) {
   return (
     <motion.div
       aria-hidden
-      animate={{ scale: [1, 1.08, 1], opacity: [0.5, 0.7, 0.5] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      animate={{
+        scale: subtle ? [1, 1.05, 1] : [1, 1.08, 1],
+        opacity: subtle ? [0.08, 0.14, 0.08] : [0.5, 0.7, 0.5],
+      }}
+      transition={{
+        duration: subtle ? 12 : 8,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
       className={cn(
         "pointer-events-none absolute rounded-full blur-3xl",
         colors[color],
@@ -40,3 +49,4 @@ export function GradientOrb({
     />
   );
 }
+
