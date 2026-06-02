@@ -20,7 +20,7 @@ const focusPoints = [
 
 export function MobileAppsSection() {
   return (
-    <section id="mobile" className="section-padding relative scroll-mt-28">
+    <section id="mobile" className="section-padding relative scroll-mt-12">
       <div className="absolute inset-0 mesh-bg opacity-30" aria-hidden />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
