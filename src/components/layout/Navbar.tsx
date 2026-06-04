@@ -28,56 +28,58 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "navbar-scrolled border-b py-3 backdrop-blur-xl" : "bg-transparent py-5"
-      )}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-8 lg:px-8">
-        <Link href="/" className="relative z-50 flex items-center gap-2">
-          <Image
-            src="/brand/logo.svg"
-            alt="ذكي تك"
-            width={120}
-            height={38}
-            className="h-9 w-auto"
-            priority
-          />
-        </Link>
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+          scrolled ? "navbar-scrolled border-b py-3 backdrop-blur-xl" : "bg-transparent py-5"
+        )}
+      >
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-8 lg:px-8">
+          <Link href="/" className="relative z-50 flex items-center gap-2">
+            <Image
+              src="/brand/logo.svg"
+              alt="ذكي تك"
+              width={120}
+              height={38}
+              className="h-9 w-auto"
+              priority
+            />
+          </Link>
 
-        <ul className="hidden items-center gap-6 lg:flex">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm text-theme-muted transition-colors hover:text-brand-primary"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden items-center gap-6 lg:flex">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-theme-muted transition-colors hover:text-brand-primary"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        <motion.div className="hidden items-center gap-3 lg:flex">
-          {/* <ThemeToggle /> */}
-          <Button href="/contact" variant="primary" className="!px-5 !py-2.5 text-sm">
-            ابدأ مشروعك
-          </Button>
-        </motion.div>
+          <motion.div className="hidden items-center gap-3 lg:flex">
+            {/* <ThemeToggle /> */}
+            <Button href="/contact" variant="primary" className="!px-5 !py-2.5 text-sm">
+              ابدأ مشروعك
+            </Button>
+          </motion.div>
 
-        <div className="flex items-center gap-2 lg:hidden">
-          {/* <ThemeToggle /> */}
-          <button
-            type="button"
-            aria-label={mobileOpen ? "إغلاق القائمة" : "فتح القائمة"}
-            className="relative z-50 rounded-lg p-2.5 text-foreground"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      </nav>
+          <div className="flex items-center gap-2 lg:hidden">
+            {/* <ThemeToggle /> */}
+            <button
+              type="button"
+              aria-label={mobileOpen ? "إغلاق القائمة" : "فتح القائمة"}
+              className="relative z-50 rounded-lg p-2.5 text-foreground"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </nav>
+      </header>
 
       <AnimatePresence>
         {mobileOpen && (
@@ -116,6 +118,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
