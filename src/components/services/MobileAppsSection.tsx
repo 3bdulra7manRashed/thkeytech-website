@@ -24,7 +24,7 @@ export function MobileAppsSection() {
       <div className="absolute inset-0 mesh-bg opacity-30" aria-hidden />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <Reveal direction="left" className="max-w-[620px]">
+          <Reveal direction="left" className="max-w-[620px] mx-auto lg:mx-0">
             {/* BADGE: pink premium badge with backdrop blur and custom shadow */}
             <div className="mb-6 flex justify-center lg:justify-start">
               <span
@@ -36,42 +36,42 @@ export function MobileAppsSection() {
               </span>
             </div>
 
-            {/* TITLE: Bold and premium */}
-            <h2 className="text-balance text-[clamp(1.75rem,4.5vw,3rem)] font-bold !leading-normal py-1 text-foreground">
+            {/* TITLE: Bold and premium, centered on mobile */}
+            <h2 className="text-balance text-[clamp(1.75rem,4.5vw,3rem)] font-bold !leading-normal py-1 text-foreground text-center lg:text-right mx-auto lg:mx-0 max-w-[300px] sm:max-w-none">
               تطبيقات موبايل تصل بعملائك وتعزّز تفاعلهم
             </h2>
 
-            {/* DESCRIPTION: max width 620px, line-height 1.85, soft color */}
-            <p className="mt-5 max-w-[620px] text-[15.5px] leading-[1.85] text-theme-muted">
+            {/* DESCRIPTION: max width 620px, line-height 1.85, soft color, centered on mobile */}
+            <p className="mt-6 lg:mt-5 max-w-[620px] text-[15.5px] leading-[1.85] text-theme-muted text-center lg:text-right mx-auto lg:mx-0">
               نطوّر تطبيقات iOS و Android بتجربة مستخدم سلسة تساعدك على بناء علاقة
               أقوى مع عملائك وتحسين كفاءة عملياتك اليومية.
             </p>
 
             {/* TWO-COLUMN HORIZONTAL BLOCK FOR LISTS */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-14">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-14 max-w-[310px] min-[370px]:max-w-[350px] sm:max-w-none mx-auto sm:mx-0 w-full">
               {/* Right Column: مناسب لـ */}
-              <div>
-                <p className="mb-3 text-[14.5px] font-bold text-foreground">مناسب لـ</p>
-                <ul className="space-y-2.5">
+              <div className="text-right w-full">
+                <p className="mb-4 sm:mb-3 text-[14.5px] font-bold text-foreground text-center sm:text-right">مناسب لـ</p>
+                <ul className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-1 sm:gap-y-2.5">
                   {appTypes.map((type) => (
-                    <li key={type} className="flex items-center gap-2.5 text-[13.5px] font-medium text-foreground/75">
-                      <div className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-brand-pink/10 text-brand-pink">
+                    <li key={type} className="flex items-start gap-2.5 text-[13.5px] font-medium text-foreground/75">
+                      <div className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-brand-pink/10 text-brand-pink mt-0.5">
                         <Check size={10} strokeWidth={3.5} />
                       </div>
-                      <span>{type}</span>
+                      <span className="leading-tight">{type}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Left Column: الفوائد الرئيسية */}
-              <div>
-                <p className="mb-3 text-[14.5px] font-bold text-foreground">الفوائد الرئيسية</p>
-                <ul className="space-y-2.5">
+              <div className="text-right w-full">
+                <p className="mb-4 sm:mb-3 text-[14.5px] font-bold text-foreground text-center sm:text-right">الفوائد الرئيسية</p>
+                <ul className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-1 sm:gap-y-2.5">
                   {focusPoints.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-[13.5px] font-medium leading-relaxed text-theme-muted">
-                      <span className="text-brand-pink select-none mt-0.5">•</span>
-                      <span>{point}</span>
+                    <li key={point} className="flex items-start gap-2.5 text-[13.5px] font-medium text-theme-muted">
+                      <span className="text-brand-pink select-none mt-0.5 text-xs">•</span>
+                      <span className="leading-tight">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -79,11 +79,11 @@ export function MobileAppsSection() {
             </div>
 
             {/* CTA BUTTON: hover lift, custom shadow, 200ms ease, centered on mobile */}
-            <div className="mt-6 md:mt-8 flex justify-center lg:justify-start">
+            <div className="mt-8 lg:mt-8 flex justify-center lg:justify-start">
               <Button
                 href="/contact"
                 variant="primary"
-                className="group shadow-[0_4px_12px_rgba(79,112,255,0.12)] hover:shadow-[0_12px_30px_rgba(79,112,255,0.20)] hover:-translate-y-0.5 transition-all duration-200 ease-out w-full max-w-[230px] sm:w-auto text-center justify-center py-2.5 md:py-3 text-[13.5px] md:text-sm"
+                className="group shadow-[0_4px_12px_rgba(79,112,255,0.12)] hover:shadow-[0_12px_30px_rgba(79,112,255,0.20)] hover:-translate-y-0.5 transition-all duration-200 ease-out w-full max-w-[240px] sm:max-w-[230px] sm:w-auto text-center justify-center py-3.5 sm:py-2.5 md:py-3 text-[13.5px] md:text-sm"
               >
                 اطلب عرض سعر
                 <ArrowLeft size={18} className="transition-transform duration-200 group-hover:-translate-x-0.5" />
@@ -109,14 +109,14 @@ function MobileMockups() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
-        className="glass-card w-[130px] min-[400px]:w-[160px] sm:w-[215px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow"
+        className="glass-card w-[110px] min-[360px]:w-[130px] min-[400px]:w-[160px] sm:w-[215px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow"
       >
         <PhoneScreen accent="primary" />
       </motion.div>
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-        className="glass-card z-10 w-[150px] min-[400px]:w-[180px] sm:w-[235px] overflow-hidden rounded-3xl border-2 border-brand-pink/20 p-2"
+        className="glass-card z-10 w-[130px] min-[360px]:w-[150px] min-[400px]:w-[180px] sm:w-[235px] overflow-hidden rounded-3xl border-2 border-brand-pink/20 p-2"
         style={{ boxShadow: "0 8px 30px rgba(252, 49, 150, 0.12)" }}
       >
         <div className="mb-2 flex items-center justify-center">
@@ -127,7 +127,7 @@ function MobileMockups() {
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
-        className="glass-card hidden w-[130px] min-[400px]:w-[160px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow sm:block sm:w-[215px]"
+        className="glass-card hidden w-[110px] min-[360px]:w-[130px] min-[400px]:w-[160px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow sm:block sm:w-[215px]"
       >
         <PhoneScreen accent="light" />
       </motion.div>

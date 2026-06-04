@@ -32,7 +32,7 @@ export function WebDevSection() {
 
           <Reveal direction="left" className="order-1 lg:order-2">
             {/* BADGE: Premium pill with subtle blur glow */}
-            <div className="mb-4 md:mb-6 flex justify-center lg:justify-start">
+            <div className="mb-5 md:mb-6 flex justify-center lg:justify-start">
               <span className="relative inline-flex items-center justify-center rounded-full border border-[rgba(79,112,255,0.15)] bg-[rgba(79,112,255,0.08)] px-[18px] py-[8px] text-[12.5px] font-semibold text-[#4f70ff] shadow-[0_4px_12px_rgba(79,112,255,0.08)]">
                 <span className="absolute inset-0 rounded-full bg-[#4f70ff]/10 blur-xl opacity-75 pointer-events-none -z-10" />
                 تطوير المواقع
@@ -45,28 +45,28 @@ export function WebDevSection() {
             </h2>
 
             {/* DESCRIPTION: Max width 580px, line-height 1.9, softer color */}
-            <p className="mt-4 md:mt-6 md:max-w-[580px] text-[15.5px] leading-[1.85] text-theme-muted">
+            <p className="mt-5 md:mt-6 md:max-w-[580px] text-[15.5px] leading-[1.85] text-theme-muted">
               نصمم ونطوّر تجارب رقمية ذكية تساعد عملك على النمو — مواقع سريعة،
               جذابة، ومُحسّنة لمحركات البحث تبني ثقة عملائك من أول زيارة.
             </p>
 
             {/* USE CASES LIST: Check icons, refined spacing */}
-            <div className="mt-6 md:mt-8">
-              <p className="mb-3 text-[13px] font-bold tracking-wider text-foreground/40">حالات الاستخدام</p>
-              <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+            <div className="mt-7 md:mt-8 max-w-[310px] min-[370px]:max-w-[350px] md:max-w-none mx-auto md:mx-0 w-full">
+              <p className="mb-3 text-[13px] font-bold tracking-wider text-foreground/40 text-center md:text-right">حالات الاستخدام</p>
+              <ul className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-2 sm:gap-x-6">
                 {useCases.map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 text-[13.5px] font-medium text-foreground/75">
-                    <div className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-[#4f70ff]/10 text-[#4f70ff]">
+                  <li key={item} className="flex items-start gap-2.5 text-[13.5px] font-medium text-foreground/75">
+                    <div className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-[#4f70ff]/10 text-[#4f70ff] mt-0.5">
                       <Check size={10} strokeWidth={3.5} />
                     </div>
-                    <span>{item}</span>
+                    <span className="leading-tight">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* FEATURE TAGS: Premium chips, subtle border, smooth hover */}
-            <div className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-2.5">
+            <div className="mt-7 md:mt-8 flex flex-wrap gap-2 md:gap-2.5">
               {benefits.map((b) => (
                 <span
                   key={b}
@@ -78,7 +78,7 @@ export function WebDevSection() {
             </div>
 
             {/* PRIMARY CTA: Shadow, hover lift, arrow translate on hover */}
-            <div className="mt-6 md:mt-8 flex justify-center md:justify-start">
+            <div className="mt-7 md:mt-8 flex justify-center md:justify-start">
               <Button
                 href="/contact"
                 className="group shadow-[0_4px_12px_rgba(68,96,239,0.12)] md:shadow-[0_4px_20px_rgba(68,96,239,0.18)] hover:shadow-[0_10px_28px_rgba(68,96,239,0.28)] hover:-translate-y-0.5 transition-all duration-300 w-full max-w-[240px] sm:max-w-[230px] sm:w-auto text-center justify-center py-3.5 sm:py-2.5 md:py-3 text-[13.5px] md:text-sm"
@@ -98,7 +98,7 @@ function LaptopMockup() {
   return (
     <motion.div
       whileHover={{ y: -6 }}
-      className="glass-card relative mx-auto max-w-[88%] md:max-w-[550px] overflow-hidden p-1.5 md:p-2"
+      className="glass-card relative mx-auto max-w-[76%] sm:max-w-[88%] md:max-w-[550px] overflow-hidden p-1.5 md:p-2"
       style={{ boxShadow: "0 30px 60px rgba(15, 23, 42, 0.08)" }}
     >
       {/* Subtle blue glow behind the card */}
