@@ -102,21 +102,21 @@ export function MobileAppsSection() {
 
 function MobileMockups() {
   return (
-    <div className="relative flex items-center justify-center gap-4 py-8" style={{ filter: "drop-shadow(0 20px 40px rgba(15, 23, 42, 0.06))" }}>
+    <div className="relative flex items-center justify-center gap-3 sm:gap-4 py-8" style={{ filter: "drop-shadow(0 20px 40px rgba(15, 23, 42, 0.06))" }}>
       {/* Focused ambient glow closer to devices */}
       <div className="absolute -inset-6 bg-[#4460ef]/8 blur-2xl rounded-full pointer-events-none -z-10" />
 
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
-        className="glass-card w-[180px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow sm:w-[215px]"
+        className="glass-card w-[130px] min-[400px]:w-[160px] sm:w-[215px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow"
       >
         <PhoneScreen accent="primary" />
       </motion.div>
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-        className="glass-card z-10 w-[200px] overflow-hidden rounded-3xl border-2 border-brand-pink/20 p-2 sm:w-[235px]"
+        className="glass-card z-10 w-[150px] min-[400px]:w-[180px] sm:w-[235px] overflow-hidden rounded-3xl border-2 border-brand-pink/20 p-2"
         style={{ boxShadow: "0 8px 30px rgba(252, 49, 150, 0.12)" }}
       >
         <div className="mb-2 flex items-center justify-center">
@@ -127,7 +127,7 @@ function MobileMockups() {
       <motion.div
         animate={{ y: [0, -6, 0] }}
         transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
-        className="glass-card hidden w-[180px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow sm:block sm:w-[215px]"
+        className="glass-card hidden w-[130px] min-[400px]:w-[160px] overflow-hidden rounded-3xl border-2 border-white/10 p-2 shadow-glow sm:block sm:w-[215px]"
       >
         <PhoneScreen accent="light" />
       </motion.div>

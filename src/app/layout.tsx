@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={cairo.variable} suppressHydrationWarning>
-      <body className="font-cairo min-h-screen">
+      <body className="font-cairo min-h-screen overflow-x-hidden">
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
