@@ -14,7 +14,7 @@ export function Footer() {
         style={{ opacity: "var(--footer-mesh-opacity)" }}
         aria-hidden
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
+      <div className="relative mx-auto max-w-7xl px-5 py-12 md:px-8 lg:px-8 lg:py-14">
         <div className="grid gap-8 lg:grid-cols-[2fr_1fr_1fr] lg:gap-12">
           {/* Brand Column — Visual Anchor */}
           <div>

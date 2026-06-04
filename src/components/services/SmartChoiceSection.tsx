@@ -43,7 +43,7 @@ export function SmartChoiceSection() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                className="group relative h-full flex flex-col items-start text-right p-6 sm:p-7 rounded-[20px] border border-[rgba(68,96,239,0.08)] bg-white dark:bg-slate-900/40 shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
+                className="group relative h-full flex flex-col items-start text-right p-6 sm:p-7 rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white dark:bg-slate-900/40 shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
               >
                 {/* Header Row: Icon on right, Outcome badge on left */}
                 <div className="w-full flex justify-between items-center mb-5">

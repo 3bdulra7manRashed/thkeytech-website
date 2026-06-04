@@ -15,7 +15,7 @@ export function HeroSection() {
     <section className="relative flex min-h-screen items-center overflow-hidden pt-20 lg:pt-24">
       <HeroAtmosphere />
 
-      <div className="relative z-10 w-full px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="relative z-10 w-full px-5 py-12 md:px-8 lg:px-8 lg:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-2 lg:gap-16">
           {/* Right side — Text content (RTL first column) */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-right">
@@ -31,7 +31,7 @@ export function HeroSection() {
             <motion.h1
               {...fadeUp}
               transition={{ duration: 0.65, delay: 0.08 }}
-              className="text-balance text-4xl font-extrabold leading-[1.2] py-1 text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.2] xl:text-6xl"
+              className="text-balance text-[clamp(2.15rem,6.5vw,3.75rem)] font-extrabold leading-[1.2] py-1 text-foreground lg:leading-[1.2]"
             >
               حلول رقمية{" "}
               <span className="relative inline-block">
@@ -50,7 +50,7 @@ export function HeroSection() {
             <motion.p
               {...fadeUp}
               transition={{ duration: 0.65, delay: 0.16 }}
-              className="mt-6 max-w-[460px] text-pretty text-base leading-[1.8] text-foreground/80 sm:text-lg lg:max-w-[420px]"
+              className="mt-6 max-w-md lg:max-w-[420px] text-pretty text-base leading-[1.8] text-foreground/80 sm:text-lg"
             >
               نطوّر مواقع وتطبيقات وحلول ذكاء اصطناعي تساعد أعمالك على النمو، وتحول أفكارك إلى نتائج ملموسة.
             </motion.p>

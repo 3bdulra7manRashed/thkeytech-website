@@ -34,7 +34,7 @@ export function Navbar() {
         scrolled ? "navbar-scrolled border-b py-3 backdrop-blur-xl" : "bg-transparent py-5"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 md:px-8 lg:px-8">
         <Link href="/" className="relative z-50 flex items-center gap-2">
           <Image
             src="/brand/logo.svg"
@@ -71,7 +71,7 @@ export function Navbar() {
           <button
             type="button"
             aria-label={mobileOpen ? "إغلاق القائمة" : "فتح القائمة"}
-            className="relative z-50 rounded-lg p-2 text-foreground"
+            className="relative z-50 rounded-lg p-2.5 text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -103,7 +103,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-2xl font-semibold text-foreground"
+                    className="block py-2 text-2xl font-semibold text-foreground"
                   >
                     {link.label}
                   </Link>

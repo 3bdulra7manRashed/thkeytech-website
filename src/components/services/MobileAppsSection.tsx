@@ -20,7 +20,7 @@ const focusPoints = [
 
 export function MobileAppsSection() {
   return (
-    <section id="mobile" className="px-4 pt-20 pb-16 sm:px-6 lg:px-8 lg:pt-28 lg:pb-20 relative scroll-mt-12">
+    <section id="mobile" className="px-5 pt-14 pb-12 md:px-8 md:pt-20 md:pb-16 lg:px-8 lg:pt-28 lg:pb-20 relative scroll-mt-12">
       <div className="absolute inset-0 mesh-bg opacity-30" aria-hidden />
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -37,7 +37,7 @@ export function MobileAppsSection() {
             </div>
 
             {/* TITLE: Bold and premium */}
-            <h2 className="text-balance text-3xl font-bold !leading-normal py-1 text-foreground sm:text-4xl">
+            <h2 className="text-balance text-[clamp(1.75rem,4.5vw,3rem)] font-bold !leading-normal py-1 text-foreground">
               تطبيقات موبايل تصل بعملائك وتعزّز تفاعلهم
             </h2>
 
@@ -78,12 +78,12 @@ export function MobileAppsSection() {
               </div>
             </div>
 
-            {/* CTA BUTTON: hover lift, custom shadow, 200ms ease */}
-            <div className="mt-8 flex justify-start">
+            {/* CTA BUTTON: hover lift, custom shadow, 200ms ease, centered on mobile */}
+            <div className="mt-6 md:mt-8 flex justify-center lg:justify-start">
               <Button
                 href="/contact"
                 variant="primary"
-                className="group shadow-[0_4px_12px_rgba(79,112,255,0.12)] hover:shadow-[0_12px_30px_rgba(79,112,255,0.20)] hover:-translate-y-0.5 transition-all duration-200 ease-out"
+                className="group shadow-[0_4px_12px_rgba(79,112,255,0.12)] hover:shadow-[0_12px_30px_rgba(79,112,255,0.20)] hover:-translate-y-0.5 transition-all duration-200 ease-out w-full max-w-[230px] sm:w-auto text-center justify-center py-2.5 md:py-3 text-[13.5px] md:text-sm"
               >
                 اطلب عرض سعر
                 <ArrowLeft size={18} className="transition-transform duration-200 group-hover:-translate-x-0.5" />

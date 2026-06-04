@@ -51,7 +51,7 @@ export function AISection() {
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                className="group relative overflow-hidden text-center py-7 px-8 border border-[rgba(68,96,239,0.10)] bg-white/70 dark:bg-elevated/40 backdrop-blur-md hover:border-[rgba(68,96,239,0.18)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-2xl shadow-[0_4px_14px_rgba(17,24,39,0.035)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
+                className="group relative overflow-hidden text-center p-6 sm:p-7 border border-[rgba(68,96,239,0.10)] bg-white/70 dark:bg-elevated/40 backdrop-blur-md hover:border-[rgba(68,96,239,0.18)] transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-[24px] shadow-[0_4px_14px_rgba(17,24,39,0.035)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
               >
                 {/* Corner glow effect on hover - subtle, matching requirements */}
                 <div className="absolute -right-12 -top-12 h-24 w-24 rounded-full bg-brand-primary/[0.02] blur-2xl group-hover:bg-brand-primary/[0.05] transition-colors duration-300 pointer-events-none" />
@@ -78,8 +78,11 @@ export function AISection() {
         {/* REDESIGNED AI VISUALIZATION AREA */}
         <AIVisual />
 
-        <div className="mt-12 text-center">
-          <Button href="/contact">
+        <div className="mt-10 md:mt-12 flex justify-center">
+          <Button
+            href="/contact"
+            className="w-full max-w-[230px] sm:w-auto text-center justify-center py-2.5 md:py-3 text-[13.5px] md:text-sm"
+          >
             احجز استشارة
             <ArrowLeft size={18} />
           </Button>

@@ -26,7 +26,7 @@ export default function RootLayout({
       <body className="font-cairo min-h-screen overflow-x-hidden">
         <ThemeProvider>
           <Navbar />
-          <main>{children}</main>
+          <main className="overflow-x-hidden w-full">{children}</main>
           <Footer />
         </ThemeProvider>
         <script

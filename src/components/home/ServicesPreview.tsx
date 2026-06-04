@@ -54,7 +54,7 @@ export function ServicesPreview() {
                   <motion.article
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                    className="group relative flex h-full flex-col items-start text-right rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white p-5 sm:p-6 shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow,border-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
+                    className="group relative flex h-full flex-col items-start text-right rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white p-6 sm:p-7 shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow,border-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
                   >
                     {/* Header Group: horizontal on mobile, vertical on desktop */}
                     <div className="w-full flex flex-row md:flex-col items-start gap-4 md:gap-0 flex-1">

@@ -49,7 +49,7 @@ export function AboutContent() {
             <Reveal key={section.title} delay={i * 0.12}>
               <motion.article
                 whileHover={{ x: -4 }}
-                className="glass-card flex flex-col gap-6 p-8 sm:flex-row sm:items-start sm:p-10"
+                className="glass-card flex flex-col gap-6 p-5 sm:flex-row sm:items-start sm:p-10"
               >
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-primary/30 to-brand-purple/30">
                   <section.icon className="text-brand-light" size={28} />
@@ -67,7 +67,7 @@ export function AboutContent() {
       <section className="section-padding">
         <div className="mx-auto max-w-5xl">
           <Reveal>
-            <div className="rounded-3xl border border-brand-primary/20 bg-gradient-to-br from-brand-primary/10 to-brand-purple/5 p-10 text-center sm:p-14">
+            <div className="rounded-3xl border border-brand-primary/20 bg-gradient-to-br from-brand-primary/10 to-brand-purple/5 p-6 sm:p-14 text-center">
               <p className="text-2xl font-bold leading-relaxed text-foreground sm:text-3xl">
                 &ldquo;الحلول الذكية تبدأ بفهم حقيقي — وتنتهي بنتائج يمكنك قياسها.&rdquo;
               </p>

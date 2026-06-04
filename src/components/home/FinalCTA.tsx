@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/Button";
 
 export function FinalCTA() {
   return (
-    <section className="pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-16 lg:pb-28 px-4 sm:px-6 lg:px-8 relative">
+    <section className="pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-16 lg:pb-28 px-5 md:px-8 lg:px-8 relative">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5 }}
-        className="group relative mx-auto max-w-[920px] overflow-hidden rounded-3xl border border-[rgba(68,96,239,0.08)] bg-white dark:bg-background-elevated py-10 px-6 sm:py-12 sm:px-12 text-center shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow] duration-300 ease-out hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
+        className="group relative mx-auto max-w-[920px] overflow-hidden rounded-3xl border border-[rgba(68,96,239,0.08)] bg-white dark:bg-background-elevated py-8 px-5 sm:py-12 sm:px-12 text-center shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow] duration-300 ease-out hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)]"
       >
         {/* Extremely Subtle Brand Depth Radial Glow */}
         <div
@@ -28,7 +28,7 @@ export function FinalCTA() {
           <span className="mb-5 inline-block rounded-full border border-brand-primary/25 bg-brand-primary/10 px-4 py-1.5 text-xs font-semibold text-brand-primary dark:text-brand-light">
             استشارة مجانية
           </span>
-          <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-[clamp(1.75rem,4.5vw,3rem)] font-bold text-foreground">
             جاهز لبناء حضور رقمي أكثر ذكاءً؟
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-theme-muted">
