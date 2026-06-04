@@ -48,20 +48,26 @@ export function ChallengesSection() {
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                   className="group relative flex flex-col items-start text-right p-6 sm:p-7 rounded-[24px] border border-[rgba(68,96,239,0.08)] bg-white shadow-[0_4px_14px_rgba(17,24,39,0.035)] transition-[box-shadow,border-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(68,96,239,0.18)] hover:shadow-[0_12px_30px_rgba(17,24,39,0.08)] w-full"
                 >
-                  {/* Icon Container */}
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(68,96,239,0.05)] border border-[rgba(68,96,239,0.08)] text-[#4460ef] transition-transform duration-300 ease-out group-hover:scale-105">
-                    <IconComponent size={24} strokeWidth={1.8} />
+                  <div className="w-full flex flex-row md:flex-col items-start gap-4 md:gap-0">
+                    {/* Icon Container */}
+                    <div className="flex h-12 w-12 md:h-14 md:w-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(68,96,239,0.05)] border border-[rgba(68,96,239,0.08)] text-[#4460ef] transition-transform duration-300 ease-out group-hover:scale-105">
+                      <IconComponent size={21} className="md:hidden" strokeWidth={1.8} />
+                      <IconComponent size={24} className="hidden md:block" strokeWidth={1.8} />
+                    </div>
+
+                    {/* Content Group (Title + Description) */}
+                    <div className="flex flex-col flex-1 md:mt-5 text-right">
+                      {/* Title */}
+                      <h3 className="text-lg font-bold text-[#111827] transition-colors duration-300 ease-out group-hover:text-[#4460ef] leading-snug md:leading-normal">
+                        {card.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="mt-1.5 md:mt-3 text-sm leading-[1.8] text-[rgba(17,24,39,0.72)] max-w-xs">
+                        {card.description}
+                      </p>
+                    </div>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-[#111827] transition-colors duration-300 ease-out group-hover:text-[#4460ef]">
-                    {card.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-3 text-sm leading-[1.8] text-[rgba(17,24,39,0.72)] max-w-xs">
-                    {card.description}
-                  </p>
                 </motion.div>
               </Reveal>
             );
