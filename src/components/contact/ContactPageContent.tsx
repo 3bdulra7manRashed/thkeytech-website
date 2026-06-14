@@ -429,27 +429,6 @@ export function ContactPageContent() {
                   </span>
                 </div>
               </div>
-
-              {/* MINI STATS GRID */}
-              <div className="grid grid-cols-2 gap-3 mt-2">
-                <div className="bg-[#F7F7F2] rounded-[10px] p-3 text-center">
-                  <div className="text-xl font-extrabold text-[#4460EF] font-cairo leading-none mb-1">
-                    +150
-                  </div>
-                  <div className="text-[11px] font-normal text-[#6B6B80] font-cairo leading-none">
-                    مشروع منجز
-                  </div>
-                </div>
-                <div className="bg-[#F7F7F2] rounded-[10px] p-3 text-center">
-                  <div className="text-xl font-extrabold text-[#4460EF] font-cairo leading-none mb-1">
-                    98%
-                  </div>
-                  <div className="text-[11px] font-normal text-[#6B6B80] font-cairo leading-none">
-                    رضا العملاء
-                  </div>
-                </div>
-              </div>
-
             </div>
 
           </div>
