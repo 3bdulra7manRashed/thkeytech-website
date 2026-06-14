@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "./constants";
 
-const defaultOgImage = "/og-image.svg";
+const defaultOgImage = "/og-image.png";
 
 export function createMetadata({
   title,
@@ -24,6 +24,15 @@ export function createMetadata({
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
+    },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon.svg", type: "image/svg+xml" },
+      ],
+      apple: [
+        { url: "/icon.svg" },
+      ],
     },
     openGraph: {
       type: "website",

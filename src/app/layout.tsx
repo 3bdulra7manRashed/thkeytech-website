@@ -35,10 +35,19 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: `${siteConfig.nameEn} - ${siteConfig.name}`,
-              url: siteConfig.url,
-              description: siteConfig.description,
-              email: siteConfig.email,
+              "name": siteConfig.name,
+              "alternateName": siteConfig.nameEn,
+              "url": siteConfig.url,
+              "logo": `${siteConfig.url}/brand/logo.svg`,
+              "image": `${siteConfig.url}/og-image.png`,
+              "description": siteConfig.description,
+              "email": siteConfig.email,
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": `+${siteConfig.whatsapp}`,
+                "contactType": "customer service",
+                "availableLanguage": ["Arabic", "English"]
+              }
             }),
           }}
         />
