@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Mail, Check, Lock } from "lucide-react";
+import { Mail, Check } from "lucide-react";
 import { siteConfig } from "@/lib/constants";
 
 const WhatsAppIcon = () => (
