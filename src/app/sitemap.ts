@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/constants";
 
-const routes = ["", "/services", "/about", "/portfolio", "/contact"];
+const routes = ["", "/services", "/about", /* "/portfolio", */ "/contact"]; // portfolio temporarily disabled
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;

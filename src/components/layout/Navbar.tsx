@@ -95,7 +95,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-[60px] z-30 bg-black/40 backdrop-blur-[3px] lg:hidden"
+              className="fixed inset-0 top-[60px] z-30 bg-[rgba(15,23,42,0.08)] backdrop-blur-[4px] lg:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -105,7 +105,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.18, ease: "easeOut" }}
-              className="fixed inset-x-0 top-[60px] z-40 border-b border-[rgba(255,255,255,0.06)] bg-background/[0.97] backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.15)] lg:hidden"
+              className="fixed inset-x-0 top-[60px] z-40 border-b border-[rgba(15,23,42,0.06)] bg-[#FAFAFC] shadow-[0_12px_32px_rgba(15,23,42,0.08)] lg:hidden"
             >
               <div className="mx-auto max-w-7xl px-5 py-4">
                 <div className="flex flex-col">

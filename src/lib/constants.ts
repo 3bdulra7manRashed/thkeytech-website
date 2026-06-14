@@ -14,7 +14,7 @@ export const navLinks = [
   { href: "/", label: "الرئيسية" },
   { href: "/services", label: "خدماتنا" },
   { href: "/about", label: "من نحن" },
-  { href: "/portfolio", label: "أعمالنا" },
+  // { href: "/portfolio", label: "أعمالنا" }, // temporarily disabled
   { href: "/contact", label: "تواصل معنا" },
 ];
 
