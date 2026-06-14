@@ -31,8 +31,8 @@ export function FinalCTA() {
           <h2 className="text-balance text-[clamp(1.75rem,4.5vw,3rem)] font-bold text-foreground">
             جاهز لبناء حضور رقمي أكثر ذكاءً؟
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-theme-muted">
-            احصل على استشارة مجانية وخطة واضحة لمشروعك.
+            <p className="mt-2 text-sm sm:text-base text-theme-muted">
+              تواصل معنا اليوم لنناقش تفاصيل مشروعك ونموه.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button href="/contact" className="group/btn">
